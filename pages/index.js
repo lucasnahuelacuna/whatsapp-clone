@@ -14,7 +14,7 @@ export default function Home() {
       <ContainerApp>
         <Sidebar />
         <WelcomeScreen>
-          <Image src='/images/image1.jpg' 
+          <Image src='/images/image1.JPG' 
             width={250}
             height={250}
           />
