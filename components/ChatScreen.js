@@ -179,11 +179,19 @@ const HeaderIcons = styled.div``
 const MessageContainer = styled.div`
     padding: 30px;
     background-color: #e5ded8;
-    min-height: 90vh;
+    height: 75vh;
+    overflow-y: scroll;
+
+    ::-webkit-scrollbar {
+        display: none;
+    }
+
+    --ms-overflow-style: none;
+    scrollbar-width: none;
 `
 
 const EndOfMessage = styled.div`
-    margin-bottom: 25px;
+    margin-bottom: 50px;
 `
 
 const InputContainer = styled.form`
