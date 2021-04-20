@@ -15,10 +15,13 @@ const Chat = ({ messages, chat }) => {
             <Head>
                 <title>Chat with {getRecipientEmail(chat.users, user)}</title>
             </Head>
-            <Sidebar />
-            <ChatContainer>
-                <ChatScreen chat={chat} messages={messages} />
-            </ChatContainer>
+            <BackgroundDecoration />
+            <ContainerApp>
+                <Sidebar />
+                <ChatContainer>
+                    <ChatScreen chat={chat} messages={messages} />
+                </ChatContainer>
+            </ContainerApp>
         </Container>
     )
 }
@@ -57,13 +60,35 @@ export async function getServerSideProps(context) {
 }
 
 const Container = styled.div`
-    display: flex;
+  background-color: #dadbd5;
+  width: 100vw;
+  height: 100vh;
+  position: relative;
+`
+
+const BackgroundDecoration = styled.div`
+  height: 20vh;
+  background-color: #009788;
+`
+
+const ContainerApp = styled.div`
+  display: flex;
+  width: 90%;
+  height: 94%;
+  margin: auto;
+  position: absolute;
+  top: 3%;
+  left: 5%;
+  z-index: 50;
+  box-shadow: 0px 0px 5px 2px rgba(150,150,150,0.75);
+  -webkit-box-shadow: 0px 0px 5px 2px rgba(150,150,150,0.75);
+  -moz-box-shadow: 0px 0px 5px 2px rgba(150,150,150,0.75);
 `
 
 const ChatContainer = styled.div`
     flex: 1;
     overflow: scroll;
-    height: 100vh;
+    height: 100%;
 
     ::-webkit-scrollbar {
         display: none;

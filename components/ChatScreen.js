@@ -7,6 +7,7 @@ import { auth, db } from '../firebase'
 import SearchIcon from '@material-ui/icons/Search';
 import MoreVertIcon from '@material-ui/icons/MoreVert';
 import InsertEmoticonIcon from '@material-ui/icons/InsertEmoticon';
+import AttachFileIcon from '@material-ui/icons/AttachFile';
 import MicIcon from '@material-ui/icons/Mic';
 import { useCollection } from 'react-firebase-hooks/firestore'
 import Message from './Message'
@@ -118,7 +119,14 @@ const ChatScreen = ({ chat, messages }) => {
                 <IconButton>
                     <InsertEmoticonIcon />
                 </IconButton>
-                <Input value={input} onChange={e => setInput(e.target.value)} />
+                <IconButton>
+                    <AttachFileIcon />
+                </IconButton>
+                <Input 
+                    value={input} 
+                    onChange={e => setInput(e.target.value)}
+                    placeholder="Write a message here" 
+                />
                 <button 
                     hidden 
                     disabled={!input}
@@ -141,7 +149,7 @@ const Container = styled.div``
 
 const Header = styled.div`
     position: sticky;
-    background-color: white;
+    background-color: #ededed;
     z-index: 100;
     top: 0;
     display: flex;
@@ -184,7 +192,7 @@ const InputContainer = styled.form`
     padding: 10px;
     position: sticky;
     bottom: 0;
-    background-color: white;
+    background-color: #ededed;
     z-index: 100;
 `
 
@@ -192,8 +200,8 @@ const Input = styled.input`
     flex: 1;
     outline: none;
     border: none;
-    border-radius: 10px;
-    background-color: whitesmoke;
+    border-radius: 25px;
+    background-color: white;
     padding: 20px;
     margin-left: 15px;
     margin-right: 15px;

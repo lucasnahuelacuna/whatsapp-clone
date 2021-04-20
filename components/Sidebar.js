@@ -55,12 +55,14 @@ const Sidebar = () => {
             </Header>
 
             <Search>
-                <SearchIcon />
-                <SearchInput placeholder='Search in chats' />
+                <SearchContainer>
+                    <SearchIcon />
+                    <SearchInput placeholder='Search in chats' />
+                </SearchContainer>
             </Search>
 
             <SidebarButton onClick={createChat}>
-                Start a new chat
+                START A NEW CHAT
             </SidebarButton>
 
             {/* List of Chats */}
@@ -76,10 +78,12 @@ export default Sidebar
 const Container = styled.div`
     flex: 0.45;
     border-right: 1px solid whitesmoke;
-    height: 100vh;
+    /*height: 100vh;*/
+    height: 100%;
     min-width: 300px;
     max-width: 350px;
     overflow-y: scroll;
+    background-color: white;
 
     ::-webkit-scrollbar {
         display: none;
@@ -93,7 +97,7 @@ const Header = styled.div`
     display: flex;
     position: sticky;
     top: 0;
-    background-color: white;
+    background-color: #ededed;
     z-index: 1;
     justify-content: space-between;
     align-items: center;
@@ -114,24 +118,37 @@ const IconsContainer = styled.div`
 
 `
 
-const Search = styled.div`
+const SearchContainer = styled.div`
     display: flex;
     align-items: center;
-    padding: 20px;
+    background-color: white;
+    padding: 10px;
+    border-radius: 25px;
+`
+
+const Search = styled.div`
+    padding: 15px;
     border-radius: 2px;
+    background-color: #f6f6f6;
 `
 
 const SearchInput = styled.input`
     outline: none;
     border: none;
     flex: 1;
+    margin-left: 5px;
 `
 
-const SidebarButton = styled(Button)`
+const SidebarButton = styled.button`
     width: 100%;
+    border: none;
+    border-top: 1px solid whitesmoke;
+    border-bottom: 1px solid #eee;
+    background-color: white;
+    padding: 5px 0;
+    outline: none;
 
-    &&& {
-        border-top: 1px solid whitesmoke;
-        border-bottom: 1px solid whitesmoke;
+    :hover {
+        background-color: rgba(74, 223, 130, 0.15);
     }
 `
