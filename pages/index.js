@@ -1,5 +1,4 @@
 import Head from 'next/head'
-import Image from 'next/image'
 import Sidebar from '../components/Sidebar'
 import styled from 'styled-components'
 
@@ -14,9 +13,8 @@ export default function Home() {
       <ContainerApp>
         <Sidebar />
         <WelcomeScreen>
-          <Image src='/images/image1.jpg' 
-            width={250}
-            height={250}
+          <img src='/images/image1.jpg' 
+                 alt=""
           />
           <h2>Keep your phone conected</h2>
         </WelcomeScreen>
@@ -63,6 +61,11 @@ const WelcomeScreen = styled.div`
   > h2 {
     color: #a0a1a3;
     font-weight: 400;
+  }
+
+  > img {
+    width: 250px;
+    height: 250px;
   }
 `
 
